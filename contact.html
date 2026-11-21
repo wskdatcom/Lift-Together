@@ -39,8 +39,6 @@
         <input type="hidden" name="_subject" value="New Lift Together website message" />
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="" />
-        <input type="hidden" name="_replyto" value="" />
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="form-row-half">
           <input type="text" name="name" placeholder="NAME" autocomplete="name" required />
@@ -49,7 +47,6 @@
         <input type="email" name="email" placeholder="EMAIL" autocomplete="email" required />
         <textarea name="message" rows="5" placeholder="MESSAGE" required></textarea>
         <button type="submit" class="btn-submit">SEND MESSAGE</button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
 
       <div class="contact-side-photo">
@@ -106,24 +103,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-
-    contactForm.querySelector('[name="email"]').addEventListener('input', (event) => {
-      contactForm.querySelector('[name="_replyto"]').value = event.target.value;
-    });
-
-    contactForm.addEventListener('submit', () => {
-      const nextUrl = new URL('contact.html?sent=1', window.location.href);
-      contactForm.querySelector('[name="_next"]').value = nextUrl.href;
-    });
-
-    if (new URLSearchParams(window.location.search).get('sent') === '1') {
-      formStatus.textContent = 'Your message was submitted successfully.';
-    }
-  </script>
 
 </body>
 </html>
