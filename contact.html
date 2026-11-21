@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lift Together | Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <img src="lt-logo-blue.png" alt="Lift Together Logo" class="logo-img" />
+        <div class="brand-text">
+          <span>Lift</span>
+          <span>Together</span>
+        </div>
+      </a>
+
+      <nav class="navbar" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html" class="active">CONTACT</a></li>
+          <li><a href="projects.html">PROJECTS</a></li>
+          <li><a href="donate.html">DONATE</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="contact-top-grid">
+      <form class="contact-form" id="contact-form" action="https://formsubmit.co/lift.tgthr@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Lift Together website message" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="" />
+        <input type="hidden" name="_replyto" value="" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="form-row-half">
+          <input type="text" name="name" placeholder="NAME" autocomplete="name" required />
+          <input type="tel" name="number" placeholder="NUMBER" autocomplete="tel" required />
+        </div>
+        <input type="email" name="email" placeholder="EMAIL" autocomplete="email" required />
+        <textarea name="message" rows="5" placeholder="MESSAGE" required></textarea>
+        <button type="submit" class="btn-submit">SEND MESSAGE</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-side-photo">
+        <img src="nlcom3.png" alt="Community outreach volunteers" />
+      </div>
+    </div>
+
+    <div class="contact-wide-photo">
+      <img src="nlcom4.png" alt="Volunteers distributing meals in the community" />
+    </div>
+
+    <div class="contact-pills-row">
+      <a href="mailto:lift.tgthr@gmail.com" class="info-pill">lift.tgthr@gmail.com</a>
+      <a href="tel:+6312345678910" class="info-pill">(63+) 123-456-78910</a>
+    </div>
+
+    <div class="map-box">
+      <h3>GOOGLE MAPS</h3>
+      <div class="map-frame">
+        <iframe
+          title="Tondo Manila Map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=120.9450%2C14.5950%2C120.9850%2C14.6350&layer=mapnik&marker=14.6150%2C120.9650"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="lt-logo-white.png" alt="Lift Together White Logo" class="logo-img white" />
+        <div class="brand-text white">
+          <span>Lift</span>
+          <span>Together</span>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <h5>Navigate</h5>
+        <div class="footer-links-grid">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="donate.html">Donate</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <p>(63+) 123-456-78910</p>
+        <p>lift.tgthr@gmail.com</p>
+        <p class="footer-copy">&copy; 2026 Lift Together<br />All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    contactForm.querySelector('[name="email"]').addEventListener('input', (event) => {
+      contactForm.querySelector('[name="_replyto"]').value = event.target.value;
+    });
+
+    contactForm.addEventListener('submit', () => {
+      const nextUrl = new URL('contact.html?sent=1', window.location.href);
+      contactForm.querySelector('[name="_next"]').value = nextUrl.href;
+    });
+
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      formStatus.textContent = 'Your message was submitted successfully.';
+    }
+  </script>
+
+</body>
+</html>
