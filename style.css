@@ -1,4 +1,3 @@
-/* ================= VARIABLES & RESET ================= */
 :root {
   --primary-blue: #1562ad;
   --dark-blue: #0e4c8a;
@@ -28,7 +27,6 @@ body {
   min-height: 100vh;
 }
 
-/* Fluid container that automatically expands on PC screens */
 .container {
   width: min(92%, 1280px);
   margin: 0 auto;
@@ -41,7 +39,6 @@ main.container {
   padding-bottom: clamp(40px, 4vw, 64px);
 }
 
-/* ================= HEADER & NAVIGATION ================= */
 .site-header {
   padding-top: clamp(18px, 2.2vw, 30px);
   background: var(--white);
@@ -113,7 +110,6 @@ main.container {
   background-color: rgba(255, 255, 255, 0.22);
 }
 
-/* ================= PAGE 1: HOME ================= */
 .hero-banner {
   position: relative;
   border-radius: var(--radius-lg);
@@ -219,7 +215,6 @@ main.container {
   line-height: 1.3;
 }
 
-/* ================= PAGE 2: ABOUT (Stacked Wireframe Design) ================= */
 .about-intro {
   text-align: center;
   margin-bottom: clamp(28px, 3.5vw, 44px);
@@ -310,7 +305,6 @@ main.container {
   color: var(--primary-blue);
 }
 
-/* ================= PAGE 3: CONTACT ================= */
 .contact-top-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -444,7 +438,6 @@ main.container {
   border: 0;
 }
 
-/* ================= PAGE 4: PROJECTS (Stacked Wireframe Design) ================= */
 .project-list-wireframe {
   display: flex;
   flex-direction: column;
@@ -511,7 +504,6 @@ main.container {
   outline-offset: 3px;
 }
 
-/* ================= PAGE 5: DONATION ================= */
 .donation-list {
   display: flex;
   flex-direction: column;
@@ -564,7 +556,6 @@ main.container {
   line-height: 1.25;
 }
 
-/* ================= FOOTER ================= */
 .site-footer {
   background-color: var(--primary-blue);
   color: var(--white);
@@ -620,7 +611,6 @@ main.container {
   opacity: 0.85;
 }
 
-/* ================= RESPONSIVE (MOBILE / TABLET) ================= */
 @media (max-width: 768px) {
   .partners-grid,
   .contact-top-grid,
